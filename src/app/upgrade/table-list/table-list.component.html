@@ -1,0 +1,162 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Simple Table</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        #
+                                    </th>
+                                    <th>
+                                        Reg#
+                                    </th>
+                                    <th>
+                                        First Name
+                                    </th>
+                                    <th>
+                                        Surname
+                                    </th>
+                                    <th>
+                                        Edit
+                                    </th>
+
+                                </thead>
+                                <tbody>
+                                    <!--tr
+                                        *ngFor="let student of students | slice: (page-1) * pageSize : page * pageSize; let i =index;"-->
+                                    <tr
+                                        *ngFor="let student of students | paginate: { itemsPerPage: 10, currentPage: page },let i=index">
+
+                                        <td>
+                                            {{i+1}}
+                                        </td>
+                                        <td>
+                                            {{student.regNumber}}
+                                        </td>
+                                        <td>
+                                            {{student.firstName}}
+                                        </td>
+                                        <td>
+                                            {{student.surname}}
+                                        </td>
+                                        <td>
+                                            <button mat-raised-button type="button" class="btn btn- pull-left" (click)="viewProfile(student)">
+                                                View Profile
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <!--tr>
+                                      <td>
+                                          2
+                                      </td>
+                                      <td>
+                                          Minerva Hooper
+                                      </td>
+                                      <td>
+                                          Curaçao
+                                      </td>
+                                      <td>
+                                          Sinaai-Waas
+                                      </td>
+                                      <td class="text-primary">
+                                          $23,789
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          3
+                                      </td>
+                                      <td>
+                                          Sage Rodriguez
+                                      </td>
+                                      <td>
+                                          Netherlands
+                                      </td>
+                                      <td>
+                                          Baileux
+                                      </td>
+                                      <td class="text-primary">
+                                          $56,142
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          4
+                                      </td>
+                                      <td>
+                                          Philip Chaney
+                                      </td>
+                                      <td>
+                                          Korea, South
+                                      </td>
+                                      <td>
+                                          Overland Park
+                                      </td>
+                                      <td class="text-primary">
+                                          $38,735
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          5
+                                      </td>
+                                      <td>
+                                          Doris Greene
+                                      </td>
+                                      <td>
+                                          Malawi
+                                      </td>
+                                      <td>
+                                          Feldkirchen in Kärnten
+                                      </td>
+                                      <td class="text-primary">
+                                          $63,542
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          6
+                                      </td>
+                                      <td>
+                                          Mason Porter
+                                      </td>
+                                      <td>
+                                          Chile
+                                      </td>
+                                      <td>
+                                          Gloucester
+                                      </td>
+                                      <td class="text-primary">
+                                          $78,615
+                                      </td>
+                                  </tr-->
+
+                                </tbody>
+
+
+                            </table>
+                            <div align="center" style="border-top:1px solid green; border-bottom: 1px solid green;">
+                                <pagination-controls (pageChange)="page = $event" class="my-pagination">
+                                </pagination-controls>
+                            </div>
+                            <!--ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="students.length"
+                                [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--div class="col-md-12">
+                <jwpagination [items]="items" (changePage)="onChangePage($event)"></jwpagination>
+              </div-->
+
+        </div>
+    </div>
+</div>
