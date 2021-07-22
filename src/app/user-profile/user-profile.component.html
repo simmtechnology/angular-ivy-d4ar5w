@@ -1,0 +1,136 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+                          <div class="row">
+                              <div class="col-md-5">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Reg.# (Leave this blank)" disabled  formControlName="regNumber" value={{registrationNumber}} readonly>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-3">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Username" formControlName="userName" value="" >
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Email address" type="email" formControlName="email"  value="{{email}}">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Fist Name" type="text" formControlName="firstName" value="{{firstName}}">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Last Name" type="text" formControlName="surname" value="{{surname}}">
+                                </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="National Id" type="text" formControlName="nationalId" value="{{nationalId}}">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <mat-select  formControlName="genderId" placeholder="Select Gender" ngClass="spinner"
+                                  
+                                  >
+                                    <mat-option  [value]="0">
+                                     Select Gender
+                                    </mat-option>
+                                    <mat-option *ngFor="let s of sex " [value]="s.genderId">
+                                      {{s.genderDescription}}
+                                    </mat-option>
+                                  </mat-select>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <mat-select  formControlName="spinnerCats" placeholder="Select Category" name="categories" ngClass="spinner">
+                                    <mat-option  [value]="0">
+                                      Select Country
+                                     </mat-option>
+                                    <mat-option *ngFor="let cat of userCategories" [value]="cat.categoryId">
+                                      {{cat.categoryDescription}}
+                                    </mat-option>
+                                  </mat-select>
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <input formControlName="city" matInput placeholder="City" type="text"  value="{{city}}">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                  <mat-select  formControlName="country" placeholder="Select Country"  ngClass="spinner">
+                                    <mat-option *ngFor="let cnt of countries" [value]="cnt">
+                                      {{cnt}}
+                                    </mat-option>
+                                  </mat-select>
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-4">
+                                
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-12">
+                                <p class="mat-subheading-1 accent-color">{{info}}</p>
+                              
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <button mat-raised-button type="submit" class="btn pull-left" (click)="this.profileForm.reset()">Reset</button>
+                            </div>
+
+                            <div class="col-md-6">
+                              <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+                            
+                            </div>
+                        </div>
+                         
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card card-profile">
+                  <div class="card-avatar">
+                      <a href="javascript:void(0)">
+                          <img class="img" src="./assets/img/faces/ceo.png" />
+                      </a>
+                  </div>
+                  <div class="card-body">
+                      <h6 class="card-category text-gray">Fullstack Developer</h6>
+                      <h4 class="card-title">Simbarashe Musharu</h4>
+                      <p class="card-description">
+                         MPhil.ICT, BTech(Hons) ICT, Dip.Ed  <br>
+                          
+                         C#, Java, Springboot, HTML5, Typescripting , Javascript, PhP, MySql,  RESTful APIs
+                      </p>
+                      <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
